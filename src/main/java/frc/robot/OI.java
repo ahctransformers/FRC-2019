@@ -9,7 +9,6 @@ package frc.robot;
 
 import org.usfirst.frc.team708.robot.util.Gamepad;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ExampleCommand;
