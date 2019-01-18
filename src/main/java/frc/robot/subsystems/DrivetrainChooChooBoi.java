@@ -28,12 +28,10 @@ public class DrivetrainChooChooBoi extends Subsystem {
   rightMotor = new Spark(RobotMap.leftDriveTrainmotor);
   leftMotor = new Spark (RobotMap.rightDriveTrainmotor);
   countencoder = new Encoder (RobotMap.countencoderA,RobotMap.countencoderB);
+  
+}
 
-
-
-
-
-  }
+//public accelerate (double move, double turn) { // methods}
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
