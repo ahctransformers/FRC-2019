@@ -13,13 +13,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class ExampleSubsystem extends Subsystem {
+public class GlassyBoi extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands
 
   DoubleSolenoid saltenoid = new DoubleSolenoid(0,1);
 
-  public ExampleSubsystem() {
+  public GlassyBoi() {
     // stuff goes here
   }
 

@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.glassyboi;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
@@ -13,22 +13,22 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ExampleCommand extends Command {
-  public ExampleCommand() {
+public class MoveOut extends Command {
+  public MoveOut() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.m_GlassyBoi);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_subsystem.goIn();
+    Robot.m_GlassyBoi.goOut();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_subsystem.goIn();
+    Robot.m_GlassyBoi.goOut();
   }
 
   // Make this return true when this Command no longer needs to run execute()

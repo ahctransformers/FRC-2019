@@ -11,7 +11,8 @@ import org.usfirst.frc.team708.robot.util.Gamepad;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.glassyboi.MoveIn;
+import frc.robot.commands.glassyboi.MoveOut;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -29,11 +30,14 @@ public class OI {
   public static Gamepad operatorGamepad = new Gamepad(1);
 
   public static int GO_IN =Gamepad.button_R_Shoulder;
+  public static int GO_OUT =Gamepad.button_L_Shoulder;
 
   public static Button goInButton = new JoystickButton(operatorGamepad, GO_IN);
-  
+  public static Button goOutButton = new JoystickButton(operatorGamepad, GO_OUT);
+
   public OI() {
-    goInButton.whenPressed(new ExampleCommand());
+    goInButton.whenPressed(new MoveIn());
+    goOutButton.whenPressed(new MoveOut());
   }
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -45,13 +49,13 @@ public class OI {
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+  // button.whenPressed(new MoveIn());
 
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
-  // button.whileHeld(new ExampleCommand());
+  // button.whileHeld(new MoveIn());
 
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
+  // button.whenReleased(new MoveIn());
 }
