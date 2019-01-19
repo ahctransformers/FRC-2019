@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.glassyboi.MoveIn;
+import frc.robot.subsystems.DrivetrainChooChooBoi;
 import frc.robot.subsystems.GlassyBoi;
 
 /**
@@ -24,8 +25,9 @@ import frc.robot.subsystems.GlassyBoi;
  */
 public class Robot extends TimedRobot {
   public static GlassyBoi m_GlassyBoi = new GlassyBoi();
+  public static DrivetrainChooChooBoi m_DrivetrainChooChooBoi = new DrivetrainChooChooBoi();
   public static OI m_oi;
-
+  
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 

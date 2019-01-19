@@ -31,9 +31,12 @@ public class OI {
 
   public static int GO_IN =Gamepad.button_R_Shoulder;
   public static int GO_OUT =Gamepad.button_L_Shoulder;
+ 
+
 
   public static Button goInButton = new JoystickButton(operatorGamepad, GO_IN);
   public static Button goOutButton = new JoystickButton(operatorGamepad, GO_OUT);
+   
 
   public OI() {
     goInButton.whenPressed(new MoveIn());
