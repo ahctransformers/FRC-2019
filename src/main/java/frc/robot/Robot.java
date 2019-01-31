@@ -7,13 +7,22 @@
 
 package frc.robot;
 
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.glassyboi.MoveIn;
+import frc.robot.commands.glassyboi.NoCommand;
+import frc.robot.subsystems.DrivetrainChooChooBoi;
 import frc.robot.subsystems.GlassyBoi;
+import  edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,9 +33,10 @@ import frc.robot.subsystems.GlassyBoi;
  */
 public class Robot extends TimedRobot {
   public static GlassyBoi m_GlassyBoi = new GlassyBoi();
+  public static DrivetrainChooChooBoi m_DrivetrainChooChooBoi = new DrivetrainChooChooBoi();
   public static OI m_oi;
 
-  Command m_autonomousCommand;
+  Command m_autonomousCommand;     //MRC no autonomous??
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
@@ -36,9 +46,25 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new MoveIn());
+    m_chooser.setDefaultOption("Default Auto", new NoCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+    CameraServer.getInstance().startAutomaticCapture(0).setFPS(12);     //MRC maybe 30??
+    CameraServer.getInstance().startAutomaticCapture(1).setFPS(12);     //MRC maybe 30???
+
+    // testMove(2);
+  }
+  
+  
+ /* private void testMove(int seconds) {
+    m_DrivetrainChooChooBoi.move(1, 0);
+    try {
+      Thread.sleep(1000 * seconds);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    m_DrivetrainChooChooBoi.move(0, 0);
   }
 
   /**
