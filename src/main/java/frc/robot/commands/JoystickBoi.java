@@ -32,8 +32,7 @@ public class JoystickBoi extends Command {
     //Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.button_LeftStick),
     //                                   Robot.m_oi.driverGamepad.getAxis(Gamepad.button_RightStick));
 
-    Robot.m_DrivetrainChooChooBoi.move(-Robot.m_oi.driverGamepad.getAxis(1),
-    Robot.m_oi.driverGamepad.getAxis(0));
+    Robot.m_DrivetrainChooChooBoi.move(-Robot.m_oi.driverGamepad.getAxis(1), Robot.m_oi.driverGamepad.getAxis(0));
 
 
   }

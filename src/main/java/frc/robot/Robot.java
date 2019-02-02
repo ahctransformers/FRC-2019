@@ -55,17 +55,6 @@ public class Robot extends TimedRobot {
     // testMove(2);
   }
   
-  
- /* private void testMove(int seconds) {
-    m_DrivetrainChooChooBoi.move(1, 0);
-    try {
-      Thread.sleep(1000 * seconds);
-    } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    }
-    m_DrivetrainChooChooBoi.move(0, 0);
-  }
 
   /**
    * This function is called every robot packet, no matter the mode. Use
