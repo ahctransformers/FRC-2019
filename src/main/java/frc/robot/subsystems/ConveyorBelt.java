@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.JoystickConveyorBelt;
 
 /**
  * Add your docs here.
@@ -21,9 +22,22 @@ public class ConveyorBelt extends Subsystem {
     conveyorMotor = new Spark (RobotMap.conveyorBeltMotor);
   }
  
-  public void move (double speed){
-    conveyorMotor.set(speed);
+  public void move (double speed){ //method
+    double sign = Math.signum(speed); //conserves the sign of the speed which is multiplied to the speed in line 33
+    speed = Math.abs(speed); // set the speed to the absolute value of the speed 
+
+    if (speed==0) //comparison, checking to see if the speed is equal to zero 
+      speed=0; //sets the speed equal to zero 
+    else if (speed<0.3)// if the speed is less than 0.3 then it equals to 0.3
+      speed = 0.3;
+
+    speed = speed*sign; //adds the sign back to the speed
+
+    conveyorMotor.set(speed); //sets the speed of the conveyor motor
+
   }
+
+
 
   public void stop (){
     conveyorMotor.set(0);
@@ -37,5 +51,6 @@ public class ConveyorBelt extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new JoystickConveyorBelt());
   }
 }

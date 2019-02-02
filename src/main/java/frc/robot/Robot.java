@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.glassyboi.NoCommand;
+import frc.robot.subsystems.ConveyorBelt;
 import frc.robot.subsystems.DrivetrainChooChooBoi;
 import frc.robot.subsystems.GlassyBoi;
 import  edu.wpi.first.wpilibj.IterativeRobot;
@@ -34,6 +35,7 @@ import  edu.wpi.first.wpilibj.IterativeRobot;
 public class Robot extends TimedRobot {
   public static GlassyBoi m_GlassyBoi = new GlassyBoi();
   public static DrivetrainChooChooBoi m_DrivetrainChooChooBoi = new DrivetrainChooChooBoi();
+  public static ConveyorBelt m_ConveyorBelt = new ConveyorBelt();
   public static OI m_oi;
 
   Command m_autonomousCommand;     //MRC no autonomous??
