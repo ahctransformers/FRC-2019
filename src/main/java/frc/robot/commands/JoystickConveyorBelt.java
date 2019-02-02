@@ -7,6 +7,8 @@
 
 package frc.robot.commands;
 
+import org.usfirst.frc.team708.robot.util.Gamepad;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.ConveyorBelt;
@@ -16,7 +18,7 @@ public class JoystickConveyorBelt extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_ConveyorBelt);
-    
+
   }
    // Called just before this Command runs the first time 
 
@@ -27,7 +29,7 @@ public class JoystickConveyorBelt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_ConveyorBelt.move(-Robot.m_oi.operatorGamepad.getAxis(0));
+    Robot.m_ConveyorBelt.move(Robot.m_oi.operatorGamepad.getAxis(Gamepad.rightStick_Y));
 
   }
 
