@@ -16,10 +16,13 @@ import frc.robot.commands.JoystickConveyorBelt;
  * Add your docs here.
  */
 public class ConveyorBelt extends Subsystem {
-  Spark conveyorMotor ; 
+  Spark conveyorMotor1; 
+  Spark conveyorMotor2;
   
   public ConveyorBelt(){
-    conveyorMotor = new Spark (RobotMap.conveyorBeltMotor);
+    conveyorMotor1 = new Spark (RobotMap.conveyorBeltMotor1);
+    conveyorMotor2 = new Spark (RobotMap.conveyorBeltMotor2);
+
   }
  
   public void move (double speed){ //method
@@ -33,14 +36,17 @@ public class ConveyorBelt extends Subsystem {
 
     speed = speed*sign; //adds the sign back to the speed
 
-    conveyorMotor.set(speed); //sets the speed of the conveyor motor
+    conveyorMotor1.set(speed); //sets the speed of the conveyor motor
+    conveyorMotor2.set(speed);
 
   }
 
 
 
   public void stop (){
-    conveyorMotor.set(0);
+    conveyorMotor1.set(0);
+    conveyorMotor2.set(0);
+
   }
 
 
