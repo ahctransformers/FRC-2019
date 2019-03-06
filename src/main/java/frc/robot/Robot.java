@@ -51,8 +51,10 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new NoCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
-    CameraServer.getInstance().startAutomaticCapture(0).setFPS(12);     //MRC maybe 30??
-    CameraServer.getInstance().startAutomaticCapture(1).setFPS(12);     //MRC maybe 30???
+    UsbCamera downcamera = CameraServer.getInstance().startAutomaticCapture(0); 
+    downcamera.setResolution(144, 120); // MRC maybe 30??
+    UsbCamera upcamera = CameraServer.getInstance().startAutomaticCapture(1);   
+    upcamera.setResolution(144, 120);  //MRC maybe 30???
 
     // testMove(2);
   }
