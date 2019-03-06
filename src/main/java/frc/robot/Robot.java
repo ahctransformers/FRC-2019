@@ -7,12 +7,15 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.glassyboi.MoveIn;
+import frc.robot.subsystems.ConveyorBelt;
 import frc.robot.subsystems.DrivetrainChooChooBoi;
 import frc.robot.subsystems.GlassyBoi;
 
@@ -26,6 +29,7 @@ import frc.robot.subsystems.GlassyBoi;
 public class Robot extends TimedRobot {
   public static GlassyBoi m_GlassyBoi = new GlassyBoi();
   public static DrivetrainChooChooBoi m_DrivetrainChooChooBoi = new DrivetrainChooChooBoi();
+  public static ConveyorBelt m_ConveyorBelt = new ConveyorBelt();
   public static OI m_oi;
   
   Command m_autonomousCommand;

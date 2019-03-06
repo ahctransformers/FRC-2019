@@ -21,11 +21,8 @@ public class RobotMap {
   public static final int countencoderB = 1; // B channel
   public static final int conveyorBeltMotor1 = 0; 
   public static final int conveyorBeltMotor2 = 1;
-
-  //*
-
- // public static int saltenoid = 0;
- // public static int saltenoid = 1;
+  public static int saltenoidA = 0;
+  public static int saltenoidB = 1;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;

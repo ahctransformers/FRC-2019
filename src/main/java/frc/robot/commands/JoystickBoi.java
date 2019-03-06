@@ -28,7 +28,7 @@ public class JoystickBoi extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.leftStick_Y), Gamepad.rightStick_X);
+    Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.leftStick_Y), Robot.m_oi.driverGamepad.getAxis(Gamepad.rightStick_X));
   }
 
   // Make this return true when this Command no longer needs to run execute()
