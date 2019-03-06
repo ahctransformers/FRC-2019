@@ -26,14 +26,14 @@ public class DrivetrainChooChooBoi extends Subsystem {
 
   public DrivetrainChooChooBoi () {
 
-  leftMotor = new Spark(RobotMap.leftDriveTrainmotor);      ////we changed from rightDrive and next line leftDrive
-  rightMotor = new Spark (RobotMap.rightDriveTrainmotor);
+  rightMotor = new Spark(RobotMap.leftDriveTrainmotor);
+  leftMotor = new Spark (RobotMap.rightDriveTrainmotor);
   countencoder = new Encoder (RobotMap.countencoderA,RobotMap.countencoderB);
 
   swagMove = new DifferentialDrive(leftMotor, rightMotor);
-  }
+}
 
-public void move(double throttle, double rotation){
+public void move (double throttle, double rotation) {
   swagMove.arcadeDrive(throttle, rotation);
 }
 
@@ -44,7 +44,8 @@ public void move(double throttle, double rotation){
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
     setDefaultCommand(new JoystickBoi());
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
   }
 }

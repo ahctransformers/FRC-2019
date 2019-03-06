@@ -7,23 +7,14 @@
 
 package frc.robot;
 
-import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
-
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.glassyboi.NoCommand;
-import frc.robot.subsystems.ConveyorBelt;
+import frc.robot.commands.glassyboi.MoveIn;
 import frc.robot.subsystems.DrivetrainChooChooBoi;
 import frc.robot.subsystems.GlassyBoi;
-import  edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -35,10 +26,9 @@ import  edu.wpi.first.wpilibj.IterativeRobot;
 public class Robot extends TimedRobot {
   public static GlassyBoi m_GlassyBoi = new GlassyBoi();
   public static DrivetrainChooChooBoi m_DrivetrainChooChooBoi = new DrivetrainChooChooBoi();
-  public static ConveyorBelt m_ConveyorBelt = new ConveyorBelt();
   public static OI m_oi;
-
-  Command m_autonomousCommand;     //MRC no autonomous??
+  
+  Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
@@ -48,9 +38,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new NoCommand());
+    m_chooser.setDefaultOption("Default Auto", new MoveIn());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+
     UsbCamera downcamera = CameraServer.getInstance().startAutomaticCapture(0); 
     downcamera.setResolution(144, 120); // MRC maybe 30??
     UsbCamera upcamera = CameraServer.getInstance().startAutomaticCapture(1);   
@@ -58,7 +49,6 @@ public class Robot extends TimedRobot {
 
     // testMove(2);
   }
-  
 
   /**
    * This function is called every robot packet, no matter the mode. Use

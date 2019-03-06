@@ -15,12 +15,14 @@ package frc.robot;
  */
 public class RobotMap {
 
+
   public static final int leftDriveTrainmotor = 8;
   public static final int rightDriveTrainmotor = 9; 
   public static final int countencoderA = 0; // A channel
   public static final int countencoderB = 1; // B channel
   public static final int conveyorBeltMotor1 = 0; 
   public static final int conveyorBeltMotor2 = 1;
+
 
   //*
 
