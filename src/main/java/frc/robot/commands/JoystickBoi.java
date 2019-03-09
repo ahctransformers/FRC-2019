@@ -13,6 +13,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class JoystickBoi extends Command {
+
+  double slowmoSpeed = 0.4;
+
   public JoystickBoi() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -28,7 +31,11 @@ public class JoystickBoi extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.leftStick_Y), Robot.m_oi.driverGamepad.getAxis(Gamepad.rightStick_X));
+    if (Robot.m_oi.driverGamepad.getButton(Gamepad.button_L_Shoulder)) {
+      Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.leftStick_Y) * slowmoSpeed, Robot.m_oi.driverGamepad.getAxis(Gamepad.rightStick_X) * slowmoSpeed);
+    } else {
+      Robot.m_DrivetrainChooChooBoi.move(Robot.m_oi.driverGamepad.getAxis(Gamepad.leftStick_Y), Robot.m_oi.driverGamepad.getAxis(Gamepad.rightStick_X));
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

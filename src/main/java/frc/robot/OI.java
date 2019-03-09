@@ -34,6 +34,7 @@ public class OI {
  
 
 
+
   public static Button goInButton = new JoystickButton(operatorGamepad, GO_IN);
   public static Button goOutButton = new JoystickButton(operatorGamepad, GO_OUT);
    
