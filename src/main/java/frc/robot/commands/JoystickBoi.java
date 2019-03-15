@@ -14,7 +14,7 @@ import frc.robot.Robot;
 
 public class JoystickBoi extends Command {
 
-  double slowmoSpeed = 0.4;
+  double slowmoSpeed = 0.5;
 
   public JoystickBoi() {
     // Use requires() here to declare subsystem dependencies
